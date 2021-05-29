@@ -1,0 +1,58 @@
+<div class="flex">
+    <div class="w-2/5 mt-5 mr-2.5">
+        <p>Chọn địa chỉ nhận hàng</p>
+        <p class="mt-2.5">
+            Quý khách có thể lưu tối đa 2 địa chỉ nhận hàng trên Cọp Xanh. Phí VC Nội Địa Việt Nam sẽ thay đổi tùy theo từng tỉnh. Có thể tham khảo <a href="#">tại đây.</a>
+        </p>
+        <nz-descriptions class="mt-2.5" nzTitle="Thông tin nhận hàng" nzBordered>
+            <nz-descriptions-item nzTitle="Người nhận" [nzSpan]="3">
+                Linh
+            </nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Điện thoại" [nzSpan]="3">
+                098765432
+            </nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Địa chỉ" [nzSpan]="3">
+                Thanh Xuân -Hà Nội
+            </nz-descriptions-item>
+        </nz-descriptions>
+        <p class="text-red-500 italic mt-2.5">
+            Kho nhận hàng của bạn đang được cấu hình bắt buộc, không thể thay đổi địa chỉ nhận hàng vào lúc này! Nếu bạn cần hỗ trợ thêm, vui lòng liên hệ CSKH...
+        </p>
+    </div>
+    <div class="w-3/5 mt-5 ml-2.5">
+        <p>Danh sách shop kết đơn</p>
+        <p class="mt-2.5">
+            Quý khách lựa chọn các shop mình muốn kết đơn. Số tiền đặt cọc trước sẽ tính tỉ lệ theo tổng giá trị tiền hàng. Để bảo mật Quý khách nhập mật khẩu đăng nhập trước khi đặt cọc.
+        </p>
+        <p class="mb-5 mt-2.5 text-base font-bold text-black">Thông tin đơn hàng</p>
+        <nz-table #borderedTable nzBordered class="mt-2.5">
+            <thead>
+              <tr>
+                <th>Shop</th>
+                <th>Số lượng</th>
+                <th>Tiền hàng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+        </nz-table>
+        <div class="flex mt-2.5">
+            <div class="w-2/5">
+                <p>Tổng: <span class="text-base font-bold text-current">96.234đ</span></p>
+                <p class="mt-2.5">Đặt cọc (50%): <span class="text-base font-bold text-current">96.234đ</span></p>
+                <p class="mt-2.5">Số dư hiện tại: <span class="text-base font-bold text-current">96.234đ</span></p>
+            </div>
+            <div class="w-3/5">
+                <p>Bạn đang thiếu <span class="text-red-800 text-base font-bold">-640.916đ</span> vui lòng nạp tiền để đặt cọc. Hướng dẫn <a href="#">tại đây</a>.</p>
+                <p class="mt-2.5">Nếu bạn đã nạp tiền thành công và chưa thấy số dư thay đổi, vui lòng <a href="#">click vào đây</a>.</p>
+                <input nz-input placeholder="Xác nhận đặt cọc bằng mật khẩu" />
+                <button class="mt-2.5" nz-button nzType="primary">Đặt cọc</button>
+            </div>
+        </div>
+    </div>
+</div>
