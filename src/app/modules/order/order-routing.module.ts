@@ -10,7 +10,7 @@ const routes: Routes = [
         component: OrderComponent,
     },
     {
-        path: '/detail',
+        path: 'detail',
         loadChildren: () => import('./detail/detail.module').then(m => m.OrderDetailModule),
     },
     

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from './cart.service';
 
 @Component({
     selector: 'cx-cart',
@@ -8,12 +9,22 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
     index = 0;
 
-    constructor() { }
+    constructor(
+        private _cartService: CartService
+    ) { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        this.getCarts();
+    }
 
 
     onIndexChange(event: number): void {
         this.index = event;
+    }
+
+    private getCarts() {
+        this._cartService.getCarts().subscribe(res => {
+            console.log('res :', res);
+        })
     }
 }

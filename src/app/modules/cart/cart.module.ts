@@ -10,6 +10,7 @@ import { CartComponent } from './cart.component';
 import { CartProductModule } from './product/product.module';
 import { CartAddressModule } from './address/address.module';
 import { CartSuccessComponent } from './success/success.component';
+import { CartService } from './cart.service';
 
 const routes: Routes = [
     { 
@@ -33,6 +34,8 @@ const routes: Routes = [
         NzButtonModule
     ],
     exports: [RouterModule],
-    providers: [],
+    providers: [
+        CartService
+    ],
 })
 export class CartModule {}

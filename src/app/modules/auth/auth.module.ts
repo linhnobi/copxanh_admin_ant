@@ -8,10 +8,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import { LoginComponent } from './login/login.component';
 import { AuthRoutingModule } from './auth.routing';
+import { RegisterComponent } from './register/register.component';
+import { AuthenticationService } from './auth.service';
 
 @NgModule({
     declarations: [
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ],
     imports: [
         CommonModule,
@@ -23,6 +26,8 @@ import { AuthRoutingModule } from './auth.routing';
         NzButtonModule
     ],
     exports: [],
-    providers: [],
+    providers: [
+        AuthenticationService
+    ],
 })
 export class AuthModule {}

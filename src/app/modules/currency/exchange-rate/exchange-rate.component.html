@@ -1,0 +1,38 @@
+<div class="mb-4">Thông tin thay đổi tỉ giá tệ</div>
+<div class="mb-4">Giá tệ hiện tại</div>
+<div class="w-1/5 mb-4">
+    <input nz-input />
+</div>
+<div class="mb-4">Giá tệ mới</div>
+<div class="w-1/5 mb-4">
+    <input nz-input placeholder="Giá tệ mới" />
+</div>
+<div class="mb-4">
+    <button nz-button nzType="primary">Đồng ý</button>
+</div>
+
+<div class="mb-4">Lịch sử thay đổi tỉ giá tệ</div>
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Giá tệ mới</th>
+        <th>Giá tệ cũ</th>
+        <th>Người thay đổi</th>
+        <th>Thời gian</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data; let i=index">
+        <td>{{ i + 1}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.address}}</td>
+        <td>
+          <a>Action 一 {{data.name}}</a>
+          <!-- <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a> -->
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
