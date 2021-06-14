@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 export abstract class AbstractApiRequestService {
     baseUrl: string;
     constructor(
-        public _http: HttpClient,
+        protected _http: HttpClient,
     ) {
        this.baseUrl = 'https://copxanh.com/api/'
     }

@@ -13,13 +13,10 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const token = localStorage.getItem('token');
         if (token) {
-            console.log('token : ', token);
-            req.clone({
-                setHeaders: {
-                    Authorization: `Bearer ${token}`
-                  }
-            //    });
-            });
+            req = req.clone({
+                headers: req.headers
+                  .set('Authorization', `Bearer ${token}`)
+              });
         }
         console.log('req :', req);
         // console.log('next :', next);
