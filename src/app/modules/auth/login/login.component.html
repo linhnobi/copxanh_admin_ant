@@ -1,0 +1,81 @@
+<!-- <div class="w-screen h-screen">
+  <div style="width:600px; margin: 0 auto" class="w-3/6">
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="userName" placeholder="Username" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row class="login-form-margin">
+        <div nz-col [nzSpan]="12">
+          <label nz-checkbox formControlName="remember">
+            <span class="text-teal-500">Remember me</span>
+          </label>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <a class="login-form-forgot">Forgot password</a>
+        </div>
+      </div>
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+      Or <a> register now! </a>
+    </form>
+  </div>
+</div> -->
+
+<div class="flex items-center min-h-screen bg-white dark:bg-gray-900">
+  <div class="container mx-auto">
+      <div class="max-w-md mx-auto my-10">
+          <div class="text-center">
+              <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">Đăng nhập</h1>
+              <p class="text-gray-500 dark:text-gray-400">Đăng nhập để truy cập vào tài khoản của bạn.</p>
+          </div>
+          <div class="m-7">
+              <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                  <div class="mb-6">
+                      <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email</label>
+                      <!-- <input type="email" name="email" id="email" placeholder="you@company.com" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" /> -->
+                      <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your username!">
+                          <nz-input-group>
+                            <input type="text" nz-input formControlName="email" placeholder="Username" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"/>
+                          </nz-input-group>
+                        </nz-form-control>
+                      </nz-form-item>
+                  </div>
+                  <div class="mb-6">
+                      <div class="flex justify-between mb-2">
+                          <label for="password" class="text-sm text-gray-600 dark:text-gray-400">Mật khẩu</label>
+                          <a href="#!" class="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">Quên mật khẩu</a>
+                      </div>
+                       <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your password!">
+                          <nz-input-group>
+                            <input type="password" nz-input formControlName="password" placeholder="" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"/>
+                          </nz-input-group>
+                        </nz-form-control>
+                       </nz-form-item>
+                      <!-- <input type="password" name="password" id="password" placeholder="Your Password" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" /> -->
+                  </div>
+                  <div class="mb-6">
+                      <!-- <button type="button" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Đăng nhập</button> -->
+                      <nz-form-item>
+                        <nz-form-control>
+                          <button nz-button nzType="primary" class="w-full px-3 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Đăng nhập</button>
+                        </nz-form-control>
+                      </nz-form-item>
+                  </div>
+                  <p class="text-sm text-center text-gray-400">Bạn chưa có tài khoản? <a href="#!" class="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800">Đăng kí</a>.</p>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

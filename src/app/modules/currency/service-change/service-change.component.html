@@ -1,0 +1,38 @@
+<div class="mb-4">Thông tin phí dịch vụ</div>
+<div class="mb-4">Mua hàng</div>
+<div class="w-1/5 mb-4">
+    <input nz-input />
+</div>
+<div class="mb-4">Kiểm hàng</div>
+<div class="w-1/5 mb-4">
+    <input nz-input placeholder="Giá tệ mới" />
+</div>
+<div class="mb-4">
+    <button nz-button nzType="primary">Đồng ý</button>
+</div>
+
+<div class="mb-4">Bảng giá phí dịch vụ hiện tại</div>
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Loại phí</th>
+        <th>Giá phí hiện tại</th>
+        <th>Giá phí cũ</th>
+        <th>Người thay đổi</th>
+        <th>Thời gian</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data; let i=index">
+        <td>{{ i + 1}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.address}}</td>
+        <td>
+          <a>Action 一 {{data.name}}</a>
+        </td>
+        <td>{{data.address}}</td>
+      </tr>
+    </tbody>
+  </nz-table>

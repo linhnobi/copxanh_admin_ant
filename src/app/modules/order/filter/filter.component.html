@@ -1,0 +1,58 @@
+<div class="flex mb-4">
+    <div class="w-1/2 h-8">
+        <input nz-input placeholder="Tìm mã đơn hàng, mã đơn riêng, người bán" />
+    </div>
+    <div class="w-1/2 flex items-center h-8 pl-2.5">
+        <div class="flex items-center h-8 pl-2.5">Dịch vụ:</div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox ><i nz-icon [nzType]="'like'" class="text-base"></i></label></div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox ><i nz-icon [nzType]="'close'" class="text-base"></i></label></div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox ><i nz-icon [nzType]="'like'" class="text-base"></i></label></div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox ><i nz-icon [nzType]="'close'" class="text-base"></i></label></div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox ><i nz-icon [nzType]="'like'" class="text-base"></i></label></div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox ><i nz-icon [nzType]="'close'" class="text-base"></i></label></div>
+    </div>
+</div>
+<div class="flex mb-4">
+    <div class="w-1/2 h-8 flex">
+        <div class="w-1/4">
+            <nz-button-group>
+                <button nz-button (click)="log()">Đơn hàng</button>
+                <button nz-button nz-dropdown [nzDropdownMenu]="menu1" nzPlacement="bottomRight">
+                <i nz-icon nzType="ellipsis"></i>
+                </button>
+            </nz-button-group>
+
+            <nz-dropdown-menu #menu1="nzDropdownMenu">
+                <ul nz-menu>
+                  <li nz-menu-item>Tất cả</li>
+                  <li nz-menu-item>Đơn hàng kí gửi</li>
+                  <li nz-menu-item>Đơn hàng thường</li>
+                </ul>
+            </nz-dropdown-menu>
+        </div>
+        <div class="w-1/4">
+            <nz-button-group>
+                <button nz-button (click)="log()">Website</button>
+                <button nz-button nz-dropdown [nzDropdownMenu]="menu2" nzPlacement="bottomRight">
+                <i nz-icon nzType="ellipsis"></i>
+                </button>
+            </nz-button-group>
+            
+            <nz-dropdown-menu #menu2="nzDropdownMenu">
+                <ul nz-menu>
+                <li nz-menu-item>Taobao</li>
+                <li nz-menu-item>Tmall</li>
+                <li nz-menu-item>1688</li>
+                </ul>
+            </nz-dropdown-menu>
+        </div>
+        <div class="w-2/4">
+            <!-- [(ngModel)]="date" (ngModelChange)="onChangeDate($event)" -->
+            <nz-range-picker ></nz-range-picker>
+        </div>
+    </div>
+    <div class="w-1/2 flex items-center h-8 pl-2.5">
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox >Đang chờ xác nhận</label></div>
+        <div class="flex items-center h-8 pl-2.5"><label nz-checkbox >Đang khiếu nại</label></div>
+    </div>
+</div>
