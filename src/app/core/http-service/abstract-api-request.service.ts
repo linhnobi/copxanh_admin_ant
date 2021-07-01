@@ -5,7 +5,8 @@ export abstract class AbstractApiRequestService {
     constructor(
         protected _http: HttpClient,
     ) {
-       this.baseUrl = 'https://copxanh.com/api/'
+    //    this.baseUrl = 'https://copxanh.com/api/'
+       this.baseUrl = 'http://localhost:8000/api/';
     }
 
     get(url: string) {
@@ -14,22 +15,22 @@ export abstract class AbstractApiRequestService {
         return this._http.get(urlApi);
     }
 
-    post(url: string, body: any, opts: any) {
+    post(url: string, body: any, opts?: any) {
         const urlApi = `${this.baseUrl}${url}`;
         return this._http.post(urlApi, body, opts);
     }
 
-    put(url: string, body: any, opts: any) {
+    put(url: string, body: any, opts?: any) {
         const urlApi = `${this.baseUrl}${url}`;
         return this._http.put(urlApi, body, opts);
     }
 
-    patch(url: string, body: any, opts: any) {
+    patch(url: string, body: any, opts?: any) {
         const urlApi = `${this.baseUrl}${url}`;
         return this._http.patch(urlApi, body, opts);
     }
 
-    delete(url: string, opts: any) {
+    delete(url: string, opts?: any) {
         const urlApi = `${this.baseUrl}${url}`;
         return this._http.delete(urlApi, opts);
     }

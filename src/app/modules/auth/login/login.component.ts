@@ -11,14 +11,14 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
     validateForm!: FormGroup;
   constructor(
-    private fb: FormBuilder,
-    private auth: AuthenticationService,
-    private cookieService: CookieService,
-    private router: Router,
+    private _fb: FormBuilder,
+    private _auth: AuthenticationService,
+    private _cookieService: CookieService,
+    private _router: Router,
     ) {}
 
   ngOnInit(): void {
-    this.validateForm = this.fb.group({
+    this.validateForm = this._fb.group({
       email: [null, [Validators.required]],
       password: [null, [Validators.required]],
       remember: [true]
@@ -33,14 +33,21 @@ export class LoginComponent implements OnInit {
 
     console.log('this.validateForm :', this.validateForm);
     const body = this.validateForm.value;
-    this.auth.login(body).subscribe( (res: any) => {
+    this._auth.login(body).subscribe( (res: any) => {
       console.log('res :', res);
       const token = res.data.token;
       localStorage.setItem('token', token);
-      this.cookieService.set('copxanh', token);
-      this.router.navigate(['admin']);
+      this._cookieService.set('copxanh', token);
+      this._router.navigate(['admin']);
     })
 
+  }
+
+  getExchangeRate() {
+    this._auth.getExchangeRate().subscribe(res=> {
+		console.log('res :', res);
+		
+	})
   }
 
 }

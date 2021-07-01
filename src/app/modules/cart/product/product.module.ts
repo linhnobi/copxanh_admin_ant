@@ -13,6 +13,11 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { CartProductNormalComponent } from './normal/normal.component';
 import { CartProductShopComponent } from './shop/shop.component';
 import { CartProductItemComponent } from './item/item.component';
+import { FormsModule } from '@angular/forms';
+import { ExchangeMoneyPipeModule } from '../../../core/pipe/exchange-money.pipe';
+import { SumMoneyPipeModule } from '../../../core/pipe/sum-money.pipe';
+import { PricePipeModule } from '../../../core/pipe/price.pipe';
+import { MoneyCartPipeModule } from '../pipe/money-cart.pipe';
 
 @NgModule({
     declarations: [
@@ -23,13 +28,18 @@ import { CartProductItemComponent } from './item/item.component';
     ],
     imports: [ 
         CommonModule,
+        FormsModule,
         NzTabsModule,
         NzInputModule,
         NzButtonModule,
         NzImageModule,
         NzInputNumberModule,
         NzDividerModule,
-        NzCheckboxModule
+        NzCheckboxModule,
+        ExchangeMoneyPipeModule,
+        SumMoneyPipeModule,
+        PricePipeModule,
+        MoneyCartPipeModule
     ],
     exports: [
         CartProductComponent

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'cx-cart-product',
@@ -6,16 +6,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartProductComponent implements OnInit {
 
+    @Input() products: any = [];
+
     tabs = [
         {
-          name: 'Thường',
-          disabled: false
+            name: 'Thường',
+            disabled: false
         },
         {
-          name: 'Kí gửi',
-          disabled: true
+            name: 'Kí gửi',
+            disabled: true
         }
-      ];
+    ];
     constructor() { }
 
     ngOnInit(): void { }

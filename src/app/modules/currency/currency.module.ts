@@ -8,6 +8,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { CurrencyServiceChangeComponent } from './service-change/service-change.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
     { path: 'exchange-rate', component: CurrencyExchangeRateComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
+        FormsModule,
         NzInputModule,
         NzButtonModule,
         NzTableModule

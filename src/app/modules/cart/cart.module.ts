@@ -31,7 +31,8 @@ const routes: Routes = [
         CartAddressModule,
         NzStepsModule,
         NzResultModule,
-        NzButtonModule
+        NzButtonModule,
+        
     ],
     exports: [RouterModule],
     providers: [

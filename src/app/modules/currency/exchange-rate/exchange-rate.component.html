@@ -1,11 +1,11 @@
 <div class="mb-4">Thông tin thay đổi tỉ giá tệ</div>
 <div class="mb-4">Giá tệ hiện tại</div>
 <div class="w-1/5 mb-4">
-    <input nz-input />
+    <input nz-input [(ngModel)]="exchangeRate"/>
 </div>
 <div class="mb-4">Giá tệ mới</div>
 <div class="w-1/5 mb-4">
-    <input nz-input placeholder="Giá tệ mới" />
+    <input nz-input [(ngModel)]="exchangeRateNew" placeholder="Giá tệ mới" />
 </div>
 <div class="mb-4">
     <button nz-button nzType="primary">Đồng ý</button>

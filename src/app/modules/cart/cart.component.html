@@ -3,6 +3,6 @@
     <nz-step nzTitle="Chọn địa chỉ nhận hàng" nzStatus="wait"></nz-step>
     <nz-step nzTitle="Đặt cọc & Kết đơn" nzStatus="wait"></nz-step>
 </nz-steps>
-<cx-cart-product *ngIf="index === 0"></cx-cart-product>
+<cx-cart-product *ngIf="index === 0" [products]='products'></cx-cart-product>
 <cx-cart-address *ngIf="index === 1"></cx-cart-address>
 <cx-cart-success *ngIf="index === 2"></cx-cart-success>

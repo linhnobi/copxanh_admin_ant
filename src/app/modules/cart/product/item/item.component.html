@@ -10,25 +10,25 @@
                     nz-image
                     width="69px"
                     height="69px"
-                    nzSrc="https://img.alicdn.com/imgextra/i3/2923712748/O1CN01TP5Ouy1WAd14xeypA_!!2923712748.jpg_430x430q90.jpg"
+                    nzSrc="{{ product.image_origin }}"
                     alt=""
                     />
                 </div>
                 <div class="pl-2.5">
-                    <p><a class="text-blue-600" href="#">夏季浅色九分牛仔裤男修身弹力小脚裤子男士韩版潮牌乞丐破洞水洗</a></p>
-                    <p>30;浅蓝色3815</p>
+                    <p><a class="text-blue-600" href="#">{{ product.title_origin }}</a></p>
+                    <p>{{ product.properties }}</p>
                 </div>
             </div>
             <div class="w-1/5 p-2.5">
-                <nz-input-number [nzMin]="1" [nzStep]="1"></nz-input-number>
+                <nz-input-number [(ngModel)]="product.quantity" (ngModelChange)="onChangeQuantity($event)" [nzMin]="1" [nzStep]="1"></nz-input-number>
             </div>
             <div class="w-1/5 p-2.5">
-                <p class="text-gray-900">626.640đ</p>
-                <p class="text-gray-500">¥168,00</p>
+                <p class="text-gray-900">{{ product.price_origin | exchangeMoney:product.price_promotion | number}}đ</p>
+                <p class="text-gray-500">¥{{ ( product.price_origin | price:product.price_promotion) }}</p>
             </div>
             <div class="w-1/5 p-2.5">
-                <p class="font-semibold text-gray-900">626.640đ</p>
-                <p class="font-semibold text-gray-500">¥168,00</p>
+                <p class="font-semibold text-gray-900">{{ (product.price_origin | exchangeMoney:product.price_promotion) | sumMoney: product.quantity | number }}đ</p>
+                <p class="font-semibold text-gray-500">¥{{ ( product.price_origin | price:product.price_promotion) | sumMoney: product.quantity}}</p>
             </div>
         </div>
     </div>

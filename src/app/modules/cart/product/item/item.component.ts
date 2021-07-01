@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'cx-cart-product-item',
@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartProductItemComponent implements OnInit {
 
-    demoValue = 3;
+    @Input() product: any;
+    @Output() changeQuantity = new EventEmitter<any>();
 
     constructor() { }
 
     ngOnInit(): void { }
+
+    onChangeQuantity(quantity: any) {
+        console.log('event : ', quantity)
+        this.product.quantity = quantity;
+        this.changeQuantity.emit(quantity);
+    }
 }

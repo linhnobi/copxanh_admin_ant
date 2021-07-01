@@ -1,45 +1,49 @@
-<nz-divider class="font-semibold" nzText="ShopName" nzOrientation="left"></nz-divider>
-<div class="flex">
-    <div class="w-4/5">
-        <div class="flex w-full h-10 bg-blue-400 items-center">
-            <div class="w-12 flex-none p-2.5">
-                <label nz-checkbox ></label>
+<ng-container *ngFor="let shop of products; let i=index">
+
+    <nz-divider class="font-semibold" nzText="{{shop.shop_name}}" nzOrientation="left"></nz-divider>
+    <div class="flex">
+        <div class="w-4/5">
+            <div class="flex w-full h-10 bg-blue-400 items-center">
+                <div class="w-12 flex-none p-2.5">
+                    <label nz-checkbox ></label>
+                </div>
+                <div class="flex flex-grow">
+                    <div class="w-2/5 p-2.5 font-semibold">Sản phẩm</div>
+                    <div class="w-1/5 p-2.5 font-semibold">Số lượng</div>
+                    <div class="w-1/5 p-2.5 font-semibold">Đơn giá</div>
+                    <div class="w-1/5 p-2.5 font-semibold">Tiền hàng</div>
+                </div>
             </div>
-            <div class="flex flex-grow">
-                <div class="w-2/5 p-2.5 font-semibold">Sản phẩm</div>
-                <div class="w-1/5 p-2.5 font-semibold">Số lượng</div>
-                <div class="w-1/5 p-2.5 font-semibold">Đơn giá</div>
-                <div class="w-1/5 p-2.5 font-semibold">Tiền hàng</div>
+            <div *ngFor="let product of shop.items; let i=index">
+                <cx-cart-product-item [product]='product' (changeQuantity)='onChangeQuantity($event)'></cx-cart-product-item>
             </div>
         </div>
-        <div>
-            <cx-cart-product-item></cx-cart-product-item>
+        <div class="w-1/5">
+            <div class="w-full h-10"></div>
+            <div class="flex justify-between mt-2.5">
+                <div>Tiền hàng</div>
+                <div class="font-semibold text-base">{{ shop.items | moneyCart: quantityChange | number}}đ</div>
+            </div>
+            <div class="flex justify-between mt-2.5">
+                <div>Phí tạm tính</div>
+                <div class="font-semibold text-base">1.656.120đ</div>
+            </div>
+            <div class="flex justify-between mt-2.5">
+                <div>Tổng</div>
+                <div class="font-semibold text-red-600 text-lg">1.656.120đ</div>
+            </div>
+            <div class="mt-2.5">
+                <p>Chú thích cho Cọp Xanh</p>
+                <textarea nz-input rows="4"></textarea>
+            </div>
+            <div class="mt-2.5">
+                <p>Ghi chú riêng</p>
+                <textarea nz-input rows="2"></textarea>
+            </div>
+            <div class="mt-2.5">
+                <button nz-button nzType="primary" class="uppercase">Đặt Hàng</button>
+            </div>
         </div>
     </div>
-    <div class="w-1/5">
-        <div class="w-full h-10"></div>
-        <div class="flex justify-between mt-2.5">
-            <div>Tiền hàng</div>
-            <div class="font-semibold text-base">1.656.120đ</div>
-        </div>
-        <div class="flex justify-between mt-2.5">
-            <div>Phí tạm tính</div>
-            <div class="font-semibold text-base">1.656.120đ</div>
-        </div>
-        <div class="flex justify-between mt-2.5">
-            <div>Tổng</div>
-            <div class="font-semibold text-red-600 text-lg">1.656.120đ</div>
-        </div>
-        <div class="mt-2.5">
-            <p>Chú thích cho Cọp Xanh</p>
-            <textarea nz-input rows="4"></textarea>
-        </div>
-        <div class="mt-2.5">
-            <p>Ghi chú riêng</p>
-            <textarea nz-input rows="2"></textarea>
-        </div>
-        <div class="mt-2.5">
-            <button nz-button nzType="primary" class="uppercase">Đặt Hàng</button>
-        </div>
-    </div>
-</div>
+
+</ng-container>
